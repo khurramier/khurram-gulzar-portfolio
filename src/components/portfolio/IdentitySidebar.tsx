@@ -1,6 +1,7 @@
 import { ChartBar, Github, GraduationCap, Mail, PenLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { contact } from "@/data/portfolio";
+import profilePhoto from "@/assets/khurram.jpg.asset.json";
 
 const profileLinks: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "Google Scholar", href: "https://scholar.google.com/citations?user=8OwAt94AAAAJ&hl=en", icon: GraduationCap },
@@ -19,10 +20,16 @@ const affiliations = [
 export function IdentitySidebar() {
   return (
     <aside className="md:sticky md:top-20 md:self-start">
-      <div className="relative z-10 -mt-20 flex h-[200px] w-[200px] items-center justify-center overflow-hidden rounded-sm border-[6px] border-background bg-banner-navy shadow-portrait">
-        <span className="select-none text-6xl font-bold tracking-tight text-primary-foreground" aria-label="Khurram Gulzar initials">
-          KG
-        </span>
+      <div className="relative z-10 -mt-20 h-[200px] w-[200px] overflow-hidden rounded-sm border-[6px] border-background bg-banner-navy shadow-portrait">
+        <img
+          src={profilePhoto.url}
+          alt="Dr. Khurram Gulzar"
+          className="h-full w-full object-cover object-center"
+          width={200}
+          height={200}
+          loading="eager"
+          decoding="async"
+        />
       </div>
 
       <div className="mt-4">
