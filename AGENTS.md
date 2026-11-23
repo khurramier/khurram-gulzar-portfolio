@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- Portfolio content (projects, publications, roles, skills, contact) lives in `src/data/portfolio.ts`; components only render it, so content edits stay in one file.
+- The home page is one scrolling page with anchor navigation (`#about`, `#publications`, …) because the brief specifies a persistent identity sidebar beside all sections.

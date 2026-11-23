@@ -1,23 +1,52 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteHeader } from "@/components/portfolio/SiteHeader";
+import { HeroBanner } from "@/components/portfolio/HeroBanner";
+import { IdentitySidebar } from "@/components/portfolio/IdentitySidebar";
+import { AboutSection } from "@/components/portfolio/AboutSection";
+import { PublicationsSection } from "@/components/portfolio/PublicationsSection";
+import { ProjectsSection } from "@/components/portfolio/ProjectsSection";
+import { ExperienceSection } from "@/components/portfolio/ExperienceSection";
+import { ContactSection } from "@/components/portfolio/ContactSection";
+import { SiteFooter } from "@/components/portfolio/SiteFooter";
 
-// The home route ships no og:image, so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Dr. Khurram Gulzar — Education Researcher & Data Analyst";
+const description =
+  "PhD-qualified education and research professional in Lahore bridging academic leadership, curriculum assessment, and data analytics. Publications, projects, and experience.";
+
 export const Route = createFileRoute("/")({
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: title },
+      { name: "twitter:description", content: description },
+    ],
+  }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="flex min-h-screen flex-col bg-background">
+      <SiteHeader />
+      <HeroBanner />
+      <main className="mx-auto w-full max-w-[1080px] flex-1 px-6">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-[260px_1fr] md:gap-12">
+          <IdentitySidebar />
+          <div className="min-w-0">
+            <AboutSection />
+            <PublicationsSection />
+            <ProjectsSection />
+            <ExperienceSection />
+            <ContactSection />
+          </div>
+        </div>
+      </main>
+      <SiteFooter />
     </div>
   );
 }
