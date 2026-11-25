@@ -21,7 +21,7 @@ export function IdentitySidebar() {
     <aside className="lg:sticky lg:top-24 lg:self-start">
       <div className="relative z-10 -mt-20 h-[200px] w-[200px] overflow-hidden rounded-sm border-[6px] border-background bg-banner-navy shadow-portrait">
         <img
-          src="/profile.jpeg"
+          src="/profile.jpg"
           alt="Dr. Khurram Gulzar"
           className="h-full w-full object-cover object-top"
           width={200}
