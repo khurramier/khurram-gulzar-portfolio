@@ -1,8 +1,6 @@
 import { ChartBar, Download, Github, GraduationCap, Mail, PenLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { contact } from "@/data/portfolio";
-import profilePhoto from "@/assets/khurram.jpg.asset.json";
-import cvFile from "@/assets/cv.pdf.asset.json";
 
 const profileLinks: { label: string; href: string; icon: LucideIcon }[] = [
   { label: "Google Scholar", href: "https://scholar.google.com/citations?user=8OwAt94AAAAJ&hl=en", icon: GraduationCap },
@@ -23,7 +21,7 @@ export function IdentitySidebar() {
     <aside className="lg:sticky lg:top-24 lg:self-start">
       <div className="relative z-10 -mt-20 h-[200px] w-[200px] overflow-hidden rounded-sm border-[6px] border-background bg-banner-navy shadow-portrait">
         <img
-          src={profilePhoto.url}
+          src="/profile.jpeg"
           alt="Dr. Khurram Gulzar"
           className="h-full w-full object-cover object-top"
           width={200}
@@ -61,7 +59,7 @@ export function IdentitySidebar() {
       </ul>
 
       <a
-        href={cvFile.url}
+        href="/Dr_Khurram_Gulzar_CV_2026.pdf"
         target="_blank"
         rel="noopener noreferrer"
         className="mt-5 flex w-full items-center justify-center gap-2 rounded border border-border-strong px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
