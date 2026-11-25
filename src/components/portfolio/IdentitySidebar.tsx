@@ -1,4 +1,4 @@
-import { ChartBar, Github, GraduationCap, Mail, PenLine } from "lucide-react";
+import { ChartBar, Download, Github, GraduationCap, Mail, PenLine } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { contact } from "@/data/portfolio";
 import profilePhoto from "@/assets/khurram.jpg.asset.json";
@@ -19,12 +19,12 @@ const affiliations = [
 
 export function IdentitySidebar() {
   return (
-    <aside className="md:sticky md:top-20 md:self-start">
+    <aside className="lg:sticky lg:top-24 lg:self-start">
       <div className="relative z-10 -mt-20 h-[200px] w-[200px] overflow-hidden rounded-sm border-[6px] border-background bg-banner-navy shadow-portrait">
         <img
           src={profilePhoto.url}
           alt="Dr. Khurram Gulzar"
-          className="h-full w-full object-cover object-center"
+          className="h-full w-full object-cover object-top"
           width={200}
           height={200}
           loading="eager"
@@ -58,6 +58,16 @@ export function IdentitySidebar() {
           </li>
         ))}
       </ul>
+
+      <a
+        href="/Dr_Khurram_Gulzar_CV_2026.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-5 flex w-full items-center justify-center gap-2 rounded border border-border-strong px-3 py-2 text-xs font-medium text-foreground transition-colors hover:border-primary hover:text-primary"
+      >
+        <Download className="h-3.5 w-3.5" aria-hidden="true" />
+        Download CV (PDF)
+      </a>
     </aside>
   );
 }

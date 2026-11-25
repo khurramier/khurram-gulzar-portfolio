@@ -33,6 +33,14 @@ export function filterProjects(list: Project[], filter: ProjectFilter): Project[
   return filter === "All" ? list : list.filter((p) => p.tag === filter);
 }
 
+export const DEFAULT_PROJECT_COUNT = 6;
+
+export function visibleProjects(list: Project[], filter: ProjectFilter, expanded: boolean): Project[] {
+  const filtered = filterProjects(list, filter);
+  if (filter !== "All" || expanded) return filtered;
+  return filtered.slice(0, DEFAULT_PROJECT_COUNT);
+}
+
 export interface Publication {
   title: string;
   venue: string;

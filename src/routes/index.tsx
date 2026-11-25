@@ -40,8 +40,8 @@ function Index() {
           <div className="min-w-0">
             <AboutSection />
             <PublicationsSection />
-            <ProjectsSection />
             <ExperienceSection />
+            <ProjectsSection />
             <ContactSection />
           </div>
         </div>
